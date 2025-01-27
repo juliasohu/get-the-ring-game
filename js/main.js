@@ -8,7 +8,7 @@ class Player {
       this.positionY = 0;
   
       this.playerElm = document.getElementById("player");
-      this.updateUI();
+      //this.updateUI();
     }
 }
 
@@ -19,9 +19,14 @@ class Obstacle {
       this.positionX = 50 - (this.width / 2);
       this.positionY = 0;
   
-      this.obstackeElm = document.getElementById("obstacle");
-      this.updateUI();
+      //this.obstackeElm = document.getElementById("obstacle");
+      //this.updateUI();
     }
 }
   
-    // ADDING DINAMIC POSITIONING/STYLING ACCORDING TO CLASS //
+
+
+
+
+  let player1 = new Player
+  let obstacle1 = new Obstacle
