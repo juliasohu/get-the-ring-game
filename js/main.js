@@ -1,10 +1,15 @@
+// MAIN VARIABLES //
 const goodObstaclesArr = [];
 const badObstaclesArr = [];
+let totalSilver = 0;
+let totalGold = 0;
+const goalSilver = 6;
+const goalGold = 4;
 
 // Creating Player 1
 let player1 = new Player();
 
-// ADDED EVENT LISTENERS FOR PLAYER MOVEMENT //
+// ADD EVENT LISTENERS FOR PLAYER MOVEMENT //
 
 document.addEventListener("keydown", (event) => {
   if (event.code === "ArrowLeft") {
@@ -14,10 +19,14 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+// ADD COUNTER TO DOM
+
+/*TODO CREATE COUNTER ELEMENTS IN VIEW const counterBlock = document.createElement("ul")
+document */
+
 // SET TIMES FOR OBJECTS CREATION GOOD vs BAD//
 const goodObjCreation = setInterval(() => {
-  const goodObj = new GoodObstacle();
-  goodObstaclesArr.push(goodObj);
+  goodObstaclesArr.push(createRandomGoodObstacle());
 }, 5000);
 
 const badObjCreation = setInterval(() => {
@@ -25,11 +34,11 @@ const badObjCreation = setInterval(() => {
   badObstaclesArr.push(badObj);
 }, 2000);
 
-// SET TIMES FOR OBJECTS MOVEMENT & COLLISION DETECTION //
+// SET TIMES, MOVEMENT & COLLISION DETECTION FOR OBSTACLES //
 
 //  GOOD  //
 const goodObjMovement = setInterval(() => {
-  goodObstaclesArr.forEach((obstacle) => {
+  goodObstaclesArr.forEach((obstacle, index) => {
     obstacle.moveDown();
 
     if (
@@ -39,10 +48,26 @@ const goodObjMovement = setInterval(() => {
       player1.positionY + player1.height > obstacle.positionY
     ) {
       // TODO Good collision action
-      console.log("COLLISION DETECTED");
+      if (obstacle.type == "silver") {
+        totalSilver++;
+        console.log("total Silver" + totalSilver);
+      } else if (obstacle.type == "gold") {
+        totalGold++;
+        console.log("total Gold" + totalGold);
+      }
+      goodObstaclesArr.splice(index, 1);
+      obstacle.obstacleElm.remove();
+      //console.log(`${obstacle.type}`);
+    }
+
+    if (totalSilver >= goalSilver && totalGold >= goalGold) {
+      stopGame();
+      window.location.href = "../screens/winner.html";
     }
   });
 }, 10);
+
+// BAD //
 
 const badObjMovement = setInterval(() => {
   badObstaclesArr.forEach((obstacle) => {
@@ -59,11 +84,18 @@ const badObjMovement = setInterval(() => {
   });
 }, 10);
 
-// REDIRECTIONS AFTER COLLISION //
+// FUNCTIONS //
 
 function stopGame() {
   clearInterval(badObjMovement);
   clearInterval(badObjCreation);
   clearInterval(goodObjCreation);
   clearInterval(goodObjMovement);
+}
+
+function createRandomGoodObstacle() {
+  const types = ["silver", "gold"];
+  const randomType = types[Math.floor(Math.random() * types.length)];
+  const goodObj = new GoodObstacle(randomType);
+  return goodObj;
 }
