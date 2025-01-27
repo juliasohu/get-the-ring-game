@@ -20,18 +20,17 @@ setInterval(() => {
   goodObstaclesArr.push(goodObj);
 }, 5000);
 
-setInterval(() => {
+/*setInterval(() => {
   const badObj = new BadObstacle();
   badObstaclesArr.push(badObj);
 }, 2000);
-
+*/
 // SET TIMES FOR OBJECTS MOVEMENT & COLLISION DETECTION //
 
 //  GOOD  //
 setInterval(() => {
   goodObstaclesArr.forEach((obstacle) => {
     obstacle.moveDown();
-
     if (
       player1.positionX < obstacle.positionX + obstacle.width &&
       player1.positionX + player1.width > obstacle.positionX &&
@@ -43,10 +42,11 @@ setInterval(() => {
       //location.href = "gameover.html"; //move to the gameover page
     }
   });
-}, 100);
+}, 10);
 
-setInterval(() => {
+/*setInterval(() => {
   badObstaclesArr.forEach((obstacle) => {
     obstacle.moveDown();
   });
 }, 100);
+*/

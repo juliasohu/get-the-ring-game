@@ -7,8 +7,8 @@ class Player {
     constructor() {
       this.width = 100;
       this.height = 100;
-      this.positionX = 900 - this.width / 2;
-      this.positionY = 660;
+      this.positionX = 500 - this.width / 2;
+      this.positionY = 700;
       this.stepSize = 10
   
       this.playerElm = document.getElementById("player");
@@ -31,8 +31,8 @@ class Player {
   
     //TODO revisar el movimiento a la derecha que no se pase ni quede corto//
     moveRight() {
-      const boardWith = boardElement.clientWidth //retrieving the width + calculating in vw
-      const maxPositionX = boardWith - this.width
+      const boardWidth = boardElement.clientWidth; //retrieving the width + calculating in vw
+      const maxPositionX = boardWidth - this.width;
      
       if(this.positionX + this.stepSize <= maxPositionX){
         this.positionX += this.stepSize;
@@ -44,10 +44,10 @@ class Player {
   //CREATION OF NEW CLASS OBSTACLE AND SUBCLASSES GOOD vs BAD//
   class Obstacle {
     constructor() {
-    const boardWith = boardElement.clientWidth
+    const boardWidth = boardElement.clientWidth
       this.width = 60;
       this.height = 60;
-      this.positionX = Math.floor(Math.random() * (boardWith - this.width))
+      this.positionX = Math.floor(Math.random() * (boardWidth - this.width))
       this.positionY = 0;
     }
   
@@ -63,7 +63,7 @@ class Player {
     }
   
     moveDown(){
-        this.positionY+=10;
+        this.positionY+=1;
         this.obstacleElm.style.top = this.positionY + "px"
     }
   }
