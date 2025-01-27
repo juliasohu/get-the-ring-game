@@ -19,4 +19,3 @@ document.addEventListener("keydown", (event) => {
 });
 
 // SET TIMES FOR OBJECTS FALLING //
-
