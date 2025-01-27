@@ -47,17 +47,18 @@ const goodObjMovement = setInterval(() => {
       player1.positionY < obstacle.positionY + obstacle.height &&
       player1.positionY + player1.height > obstacle.positionY
     ) {
-      // TODO Good collision action
+      // Good collision action
       if (obstacle.type == "silver") {
         totalSilver++;
         console.log("total Silver" + totalSilver);
-      } else if (obstacle.type == "gold") {
+      } 
+      else if (obstacle.type == "gold") {
         totalGold++;
         console.log("total Gold" + totalGold);
       }
+      //remove obstacles so that counter only takes 1
       goodObstaclesArr.splice(index, 1);
       obstacle.obstacleElm.remove();
-      //console.log(`${obstacle.type}`);
     }
 
     if (totalSilver >= goalSilver && totalGold >= goalGold) {
