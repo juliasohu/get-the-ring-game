@@ -1,3 +1,6 @@
+//ACCESSING THE BOARD ELEMENT //
+const boardElement = document.getElementById("board");
+
 // CREATION OF NEW CLASS *PLAYER* //
 
 class Player {
@@ -41,19 +44,24 @@ class Player {
   //CREATION OF NEW CLASS OBSTACLE AND SUBCLASSES GOOD vs BAD//
   class Obstacle {
     constructor() {
-      this.width = 20;
-      this.height = 10;
+      this.width = 60;
+      this.height = 60;
       this.positionX = 50 - this.width / 2;
       this.positionY = 0;
     }
   
     createObstacleHTML(){
       this.obstacleElm = document.createElement("div");
-  
       this.obstacleElm.className = "obstacle"
+      this.obstacleElm.style.width = this.width + "px";
+      this.obstacleElm.style.height = this.height + "px";
+      this.obstacleElm.style.left = this.positionX + "vw";
+      this.obstacleElm.style.top = this.positionY + "vh";
+
+      boardElement.appendChild(this.obstacleElm)
     }
   
-    moveDown(){}
+    //moveDown(){}
   }
 
   class GoodObstacle extends Obstacle {
@@ -64,7 +72,7 @@ class Player {
     }
   }
 
-  class BaddObstacle extends Obstacle {
+  class BadObstacle extends Obstacle {
     constructor(){
         super();
         this.createObstacleHTML();

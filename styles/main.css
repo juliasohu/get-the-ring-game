@@ -26,3 +26,12 @@ body{
     position: absolute;
 }
 
+.good-obstacle {
+    background-color: greenyellow;
+    position: absolute;
+}
+
+.bad-obstacle {
+    background-color: red;
+    position: absolute;
+}

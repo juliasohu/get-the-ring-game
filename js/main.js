@@ -1,12 +1,11 @@
-//ACCESSING THE BOARD ELEMENT //
-const boardElement = document.getElementById("board");
 
 const obstaclesArray = [];
 
 // Creating Player 1
 let player1 = new Player();
 
-//let obstacle1 = new Obstacle
+let good1 = new GoodObstacle();
+let bad1 = new BadObstacle();
 
 // ADDED EVENT LISTENERS FOR PLAYER MOVEMENT //
 
