@@ -7,9 +7,9 @@ class Player {
     constructor() {
       this.width = 100;
       this.height = 100;
-      this.positionX = 90 - this.width / 2;
-      this.positionY = 78;
-      this.stepSize = 2
+      this.positionX = 900 - this.width / 2;
+      this.positionY = 660;
+      this.stepSize = 10
   
       this.playerElm = document.getElementById("player");
       this.updateUI();
@@ -18,8 +18,8 @@ class Player {
     updateUI() {
       this.playerElm.style.width = this.width + "px";
       this.playerElm.style.height = this.height + "px";
-      this.playerElm.style.left = this.positionX + "vw";
-      this.playerElm.style.top = this.positionY + "vh";
+      this.playerElm.style.left = this.positionX + "px";
+      this.playerElm.style.top = this.positionY + "px";
     }
   
     moveLeft() {
@@ -31,9 +31,8 @@ class Player {
   
     //TODO revisar el movimiento a la derecha que no se pase ni quede corto//
     moveRight() {
-      const boardWith = (boardElement.clientWidth / window.innerWidth) * 100; //retrieving the width + calculating in vw
-      const playerWidth = (this.width / window.innerWidth) * 100;
-      const maxPositionX = boardWith - playerWidth;
+      const boardWith = boardElement.clientWidth //retrieving the width + calculating in vw
+      const maxPositionX = boardWith - this.width
      
       if(this.positionX + this.stepSize <= maxPositionX){
         this.positionX += this.stepSize;
@@ -45,10 +44,10 @@ class Player {
   //CREATION OF NEW CLASS OBSTACLE AND SUBCLASSES GOOD vs BAD//
   class Obstacle {
     constructor() {
-    const boardWith = (boardElement.clientWidth / window.innerWidth) * 100;
+    const boardWith = boardElement.clientWidth
       this.width = 60;
       this.height = 60;
-      this.positionX = Math.floor(Math.random() * (boardWith - (this.width / window.innerWidth * 100)))
+      this.positionX = Math.floor(Math.random() * (boardWith - this.width))
       this.positionY = 0;
     }
   
@@ -57,15 +56,15 @@ class Player {
       this.obstacleElm.className = "obstacle"
       this.obstacleElm.style.width = this.width + "px";
       this.obstacleElm.style.height = this.height + "px";
-      this.obstacleElm.style.left = this.positionX + "vw";
-      this.obstacleElm.style.top = this.positionY + "vh";
+      this.obstacleElm.style.left = this.positionX + "px";
+      this.obstacleElm.style.top = this.positionY + "px";
 
       boardElement.appendChild(this.obstacleElm)
     }
   
     moveDown(){
-        this.positionY++;
-        this.obstacleElm.style.top = this.positionY + "vh"
+        this.positionY+=10;
+        this.obstacleElm.style.top = this.positionY + "px"
     }
   }
 

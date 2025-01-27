@@ -1,4 +1,3 @@
-
 const goodObstaclesArr = [];
 const badObstaclesArr = [];
 
@@ -17,24 +16,37 @@ document.addEventListener("keydown", (event) => {
 
 // SET TIMES FOR OBJECTS CREATION GOOD vs BAD//
 setInterval(() => {
-  const goodObj = new GoodObstacle()
-  goodObstaclesArr.push(goodObj)
-}, 5000)
+  const goodObj = new GoodObstacle();
+  goodObstaclesArr.push(goodObj);
+}, 5000);
 
 setInterval(() => {
-  const badObj = new BadObstacle()
-  badObstaclesArr.push(badObj)
-}, 2000)
+  const badObj = new BadObstacle();
+  badObstaclesArr.push(badObj);
+}, 2000);
 
-// SET TIMES FOR OBJECTS MOVEMENT GOOD vs BAD //
+// SET TIMES FOR OBJECTS MOVEMENT & COLLISION DETECTION //
+
+//  GOOD  //
 setInterval(() => {
   goodObstaclesArr.forEach((obstacle) => {
-    obstacle.moveDown()
-  })
-}, 100)
+    obstacle.moveDown();
+
+    if (
+      player1.positionX < obstacle.positionX + obstacle.width &&
+      player1.positionX + player1.width > obstacle.positionX &&
+      player1.positionY < obstacle.positionY + obstacle.height &&
+      player1.positionY + player.height > obstacle.positionY
+    ) {
+      // Collision detected!
+      console.log("game over my friend!");
+      //location.href = "gameover.html"; //move to the gameover page
+    }
+  });
+}, 100);
 
 setInterval(() => {
   badObstaclesArr.forEach((obstacle) => {
-    obstacle.moveDown()
-  })
-}, 100)
+    obstacle.moveDown();
+  });
+}, 100);
