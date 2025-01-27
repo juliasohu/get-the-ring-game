@@ -15,38 +15,58 @@ document.addEventListener("keydown", (event) => {
 });
 
 // SET TIMES FOR OBJECTS CREATION GOOD vs BAD//
-setInterval(() => {
+const goodObjCreation = setInterval(() => {
   const goodObj = new GoodObstacle();
   goodObstaclesArr.push(goodObj);
 }, 5000);
 
-/*setInterval(() => {
+const badObjCreation = setInterval(() => {
   const badObj = new BadObstacle();
   badObstaclesArr.push(badObj);
 }, 2000);
-*/
+
 // SET TIMES FOR OBJECTS MOVEMENT & COLLISION DETECTION //
 
 //  GOOD  //
-setInterval(() => {
+const goodObjMovement = setInterval(() => {
   goodObstaclesArr.forEach((obstacle) => {
     obstacle.moveDown();
+  // console.log("good obstacle", obstacle.positionX, obstacle.positionY)
+  // console.log("good player", player1.positionX, player1.positionY)
+
     if (
       player1.positionX < obstacle.positionX + obstacle.width &&
       player1.positionX + player1.width > obstacle.positionX &&
       player1.positionY < obstacle.positionY + obstacle.height &&
-      player1.positionY + player.height > obstacle.positionY
+      player1.positionY + player1.height > obstacle.positionY
     ) {
-      // Collision detected!
-      console.log("game over my friend!");
+      // TODO Good collision action
+      console.log("COLLISION DETECTED");
       //location.href = "gameover.html"; //move to the gameover page
     }
   });
 }, 10);
 
-/*setInterval(() => {
+const badObjMovement = setInterval(() => {
   badObstaclesArr.forEach((obstacle) => {
     obstacle.moveDown();
+    if (
+      player1.positionX < obstacle.positionX + obstacle.width &&
+      player1.positionX + player1.width > obstacle.positionX &&
+      player1.positionY < obstacle.positionY + obstacle.height &&
+      player1.positionY + player1.height > obstacle.positionY
+    ) {
+      // TODO
+      console.log("COLLISION DETECTED");
+      stopGame()
+      window.location.href = "../screens/game-over.html"
+    }
   });
-}, 100);
-*/
+}, 10);
+
+function stopGame(){
+  clearInterval(badObjMovement)
+  clearInterval(badObjCreation)
+  clearInterval(goodObjCreation)
+  clearInterval(goodObjMovement)
+}
