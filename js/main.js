@@ -31,8 +31,6 @@ const badObjCreation = setInterval(() => {
 const goodObjMovement = setInterval(() => {
   goodObstaclesArr.forEach((obstacle) => {
     obstacle.moveDown();
-  // console.log("good obstacle", obstacle.positionX, obstacle.positionY)
-  // console.log("good player", player1.positionX, player1.positionY)
 
     if (
       player1.positionX < obstacle.positionX + obstacle.width &&
@@ -42,7 +40,6 @@ const goodObjMovement = setInterval(() => {
     ) {
       // TODO Good collision action
       console.log("COLLISION DETECTED");
-      //location.href = "gameover.html"; //move to the gameover page
     }
   });
 }, 10);
@@ -56,17 +53,17 @@ const badObjMovement = setInterval(() => {
       player1.positionY < obstacle.positionY + obstacle.height &&
       player1.positionY + player1.height > obstacle.positionY
     ) {
-      // TODO
-      console.log("COLLISION DETECTED");
-      stopGame()
-      window.location.href = "../screens/game-over.html"
+      stopGame();
+      window.location.href = "../screens/game-over.html";
     }
   });
 }, 10);
 
-function stopGame(){
-  clearInterval(badObjMovement)
-  clearInterval(badObjCreation)
-  clearInterval(goodObjCreation)
-  clearInterval(goodObjMovement)
+// REDIRECTIONS AFTER COLLISION //
+
+function stopGame() {
+  clearInterval(badObjMovement);
+  clearInterval(badObjCreation);
+  clearInterval(goodObjCreation);
+  clearInterval(goodObjMovement);
 }
