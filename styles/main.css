@@ -45,19 +45,14 @@ body{
     position: absolute;
 }
 
-.silver-obstacle {
-    background-image: ;
-    background-color: greenyellow;
+.good-obstacle {
     position: absolute;
-}
-
-.gold-obstacle {
-    background-image: ;
-    background-color: greenyellow;
-    position: absolute;
+    background-size: cover;
 }
 
 .bad-obstacle {
-    background-color: red;
+    /* background-color: red; */
+    background-image: url("../img/rock-1.png");
+    background-size: cover;
     position: absolute;
 }
