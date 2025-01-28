@@ -3,8 +3,8 @@ const goodObstaclesArr = [];
 const badObstaclesArr = [];
 let totalDiamond = 0;
 let totalGold = 0;
-const goalDiamond = 6;
-const goalGold = 4;
+const goalDiamond = 1;
+const goalGold = 1;
 
 // Creating Player 1
 let player1 = new Player();
@@ -21,8 +21,18 @@ document.addEventListener("keydown", (event) => {
 
 // ADD COUNTER TO DOM
 
-/*TODO CREATE COUNTER ELEMENTS IN VIEW const counterBlock = document.createElement("ul")
-document */
+// SCORE TRACKER ELEMENTS //
+const scoreTracker = document.getElementById("score-tracker")
+
+const counterDiamond = document.createElement("div")
+counterDiamond.className = "counter-element"
+const counterGold = document.createElement("div")
+counterGold.className = "counter-element"
+updateScoreTracker()
+
+scoreTracker.appendChild(counterDiamond)
+scoreTracker.appendChild(counterGold)
+
 
 // SET TIMES FOR OBJECTS CREATION GOOD vs BAD//
 const goodObjCreation = setInterval(() => {
@@ -55,6 +65,7 @@ const goodObjMovement = setInterval(() => {
       else if (obstacle.type == "gold") {
         totalGold++;
       }
+      updateScoreTracker()
       //remove obstacles so that counter only takes 1
       goodObstaclesArr.splice(index, 1);
       obstacle.obstacleElm.remove();
@@ -113,7 +124,6 @@ function playCollisionSound(obstacleType) {
 }
 
 function updateScoreTracker(){
-  
+  counterDiamond.innerText = `${totalDiamond} / ${goalDiamond}`;
+  counterGold.innerText = `${totalGold} / ${goalGold}`
 }
-
-// SCORE TRACKER //
