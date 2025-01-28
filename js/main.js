@@ -73,7 +73,7 @@ const goodObjMovement = setInterval(() => {
 
     if (totalDiamond >= goalDiamond && totalGold >= goalGold) {
       stopGame();
-      window.location.href = "../screens/winner.html";
+      setTimeout(() => {window.location.href = "../screens/winner.html"}, 200);
     }
   });
 }, 10);
