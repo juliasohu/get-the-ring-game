@@ -47,6 +47,7 @@ const goodObjMovement = setInterval(() => {
       player1.positionY < obstacle.positionY + obstacle.height &&
       player1.positionY + player1.height > obstacle.positionY
     ) {
+      playCollisionSound();
       // Good collision action
       if (obstacle.type == "diamond") {
         totalDiamond++;
@@ -100,3 +101,10 @@ function createRandomGoodObstacle() {
   const goodObj = new GoodObstacle(randomType);
   return goodObj;
 }
+
+function playCollisionSound() {
+  const audio = new Audio('../audio/good-obstacle-sound.wav')
+  audio.play()
+}
+
+// SCORE TRACKER //

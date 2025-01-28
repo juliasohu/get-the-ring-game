@@ -59,7 +59,6 @@ body{
 }
 
 .bad-obstacle {
-    /* background-color: red; */
     background-image: url("../img/rock-1.png");
     background-size: cover;
     position: absolute;
