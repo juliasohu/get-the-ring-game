@@ -93,3 +93,40 @@ h1{
     margin-top: 10px;
     margin-bottom: 30px;
 }
+
+#page-winner {
+    /*background-color: rgba(0, 0, 0, 0.876);*/
+    background-image: url("../img/shire-happiness.jpg");
+    background-size: cover;
+    size: 50vw;
+    justify-content: center;
+    text-align: center;
+    font-size: 40px;
+}
+
+#board-winner {
+    position: absolute;
+    background-color: rgba(175, 112, 19, 0.263);
+    border: 10px white;
+    padding: 50px 100px;
+    color: rgb(5, 61, 21);
+    border-radius: 10px;
+}
+
+#winner-image {
+    width: 200px;
+    height: auto;
+    margin-bottom: 0;
+}
+
+#ring {
+    width: 200px;
+    height: auto;
+    margin: 0;
+}
+
+#page-winner a{
+    text-decoration: none;
+    color: rgb(31, 205, 60);
+    font-style: italic;
+}
