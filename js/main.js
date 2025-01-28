@@ -112,4 +112,8 @@ function playCollisionSound(obstacleType) {
   }
 }
 
+function updateScoreTracker(){
+  
+}
+
 // SCORE TRACKER //

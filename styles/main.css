@@ -63,3 +63,14 @@ body{
     background-size: cover;
     position: absolute;
 }
+
+#score-tracker {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 10px white;
+    top: 40px;
+    right: 40px;
+    padding: 50px 40px;
+    color: white;
+    border-radius: 10px;
+}
