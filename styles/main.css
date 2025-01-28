@@ -6,6 +6,8 @@ body{
     align-items: center;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.633);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
 
 #board {
@@ -20,24 +22,32 @@ body{
 }
 
 #page-gameover {
-    /*TODO fix background*/
     background-color: rgba(0, 0, 0, 0.876);
     background-image: url("../img/background-mordor-2.jpg");
-    color: chocolate;
+    background-size: cover;
+    color: rgb(158, 76, 17);
     size: 50vw;
+    justify-content: center;
+    font-size: 40px;
 }
 
-/*#board-gameover {
-    width: 1000px;
-    height: 800px;
+#page-gameover a{
+    text-decoration: none;
+    color: rgb(162, 16, 16);
+    font-style: italic;
+}
+
+#gameover-image {
+    width: 200px;
+    height: auto;
+    margin-bottom: 0;
+}
+
+#board-gameover {
     position: relative;
-    border: 1px white;
-    background-color: black;
-    background-image: url("../img/background-mordor.jpg");
-    background-color: rgb(169, 184, 179);
-    background-size: cover;
-    overflow: hidden;
-}*/
+    justify-content: center;
+    text-align: center;
+}
 
 
 #player {
@@ -73,4 +83,13 @@ body{
     padding: 50px 40px;
     color: white;
     border-radius: 10px;
+}
+
+#score-tracker div {
+
+}
+
+h1{
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
