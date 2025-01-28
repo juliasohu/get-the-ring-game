@@ -91,7 +91,7 @@ const badObjMovement = setInterval(() => {
     ) {
       playCollisionSound(obstacle.type)
       stopGame();
-      window.location.href = "../screens/game-over.html";
+      setTimeout(() => {window.location.href = "../screens/game-over.html"}, 200) ;
     }
   });
 }, 10);
@@ -114,7 +114,7 @@ function createRandomGoodObstacle() {
 
 function playCollisionSound(obstacleType) {
   const goodAudio = new Audio('../audio/good-obstacle-sound.wav')
-  const badAudio = new Audio('../audio/ouch.mp3')
+  const badAudio = new Audio('../audio/ouch_cut.mp3')
   if (obstacleType == 'diamond' || obstacleType == 'gold') {
     goodAudio.play()
   }
