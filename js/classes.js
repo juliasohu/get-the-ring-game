@@ -81,6 +81,7 @@ class Player {
     constructor(){
         super();
         this.createObstacleHTML();
+        this.type = 'bad'
         this.obstacleElm.className = "bad-obstacle"
     }
   }

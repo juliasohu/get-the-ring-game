@@ -47,15 +47,13 @@ const goodObjMovement = setInterval(() => {
       player1.positionY < obstacle.positionY + obstacle.height &&
       player1.positionY + player1.height > obstacle.positionY
     ) {
-      playCollisionSound();
+      playCollisionSound(obstacle.type);
       // Good collision action
       if (obstacle.type == "diamond") {
         totalDiamond++;
-        console.log("total Diamond" + totalDiamond);
       } 
       else if (obstacle.type == "gold") {
         totalGold++;
-        console.log("total Gold" + totalGold);
       }
       //remove obstacles so that counter only takes 1
       goodObstaclesArr.splice(index, 1);
@@ -80,6 +78,7 @@ const badObjMovement = setInterval(() => {
       player1.positionY < obstacle.positionY + obstacle.height &&
       player1.positionY + player1.height > obstacle.positionY
     ) {
+      playCollisionSound(obstacle.type)
       stopGame();
       window.location.href = "../screens/game-over.html";
     }
@@ -102,9 +101,15 @@ function createRandomGoodObstacle() {
   return goodObj;
 }
 
-function playCollisionSound() {
-  const audio = new Audio('../audio/good-obstacle-sound.wav')
-  audio.play()
+function playCollisionSound(obstacleType) {
+  const goodAudio = new Audio('../audio/good-obstacle-sound.wav')
+  const badAudio = new Audio('../audio/ouch.mp3')
+  if (obstacleType == 'diamond' || obstacleType == 'gold') {
+    goodAudio.play()
+  }
+  else if (obstacleType == 'bad') {
+    badAudio.play()
+  }
 }
 
 // SCORE TRACKER //
