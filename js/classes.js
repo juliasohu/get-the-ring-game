@@ -5,10 +5,10 @@ const boardElement = document.getElementById("board");
 
 class Player {
     constructor() {
-      this.width = 140;
-      this.height = 140;
+      this.width = 80;
+      this.height = 120;
       this.positionX = 500 - this.width / 2;
-      this.positionY = 672;
+      this.positionY = 682;
       this.stepSize = 10
   
       this.playerElm = document.getElementById("player");
@@ -46,7 +46,7 @@ class Player {
     constructor() {
     const boardWidth = boardElement.clientWidth
       this.width = 60;
-      this.height = 60;
+      this.height = 55;
       this.positionX = Math.floor(Math.random() * (boardWidth - this.width))
       this.positionY = 0;
     }
