@@ -8,28 +8,51 @@ body{
 }
 
 #board {
-    width: 1000px;
+    width: 1400px;
     height: 800px;
     position: relative;
     border: 1px white;
-    /*TODO need to make sure this works 
-    background-image: url("./img/the-shire.jpg");*/
+    background-image: url("../img/the-shire.jpg");
     background-color: rgb(169, 184, 179);
     background-size: cover;
     overflow: hidden;
 }
 
 #page-gameover {
-
+    /*TODO fix background*/
+    background-color: rgba(0, 0, 0, 0.876);
+    background-image: url("../img/background-mordor-2.jpg");
+    color: chocolate;
+    size: 50vw;
 }
+
+/*#board-gameover {
+    width: 1000px;
+    height: 800px;
+    position: relative;
+    border: 1px white;
+    background-color: black;
+    background-image: url("../img/background-mordor.jpg");
+    background-color: rgb(169, 184, 179);
+    background-size: cover;
+    overflow: hidden;
+}*/
 
 
 #player {
-    background-color: rgb(23, 36, 23);
+    background-image: url("../img/gollum-grey.png");
+    background-size: cover;
     position: absolute;
 }
 
-.good-obstacle {
+.silver-obstacle {
+    background-image: ;
+    background-color: greenyellow;
+    position: absolute;
+}
+
+.gold-obstacle {
+    background-image: ;
     background-color: greenyellow;
     position: absolute;
 }

@@ -5,10 +5,10 @@ const boardElement = document.getElementById("board");
 
 class Player {
     constructor() {
-      this.width = 100;
-      this.height = 100;
+      this.width = 140;
+      this.height = 140;
       this.positionX = 500 - this.width / 2;
-      this.positionY = 700;
+      this.positionY = 672;
       this.stepSize = 10
   
       this.playerElm = document.getElementById("player");
