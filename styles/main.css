@@ -5,6 +5,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: rgba(0, 0, 0, 0.633);
 }
 
 #board {
@@ -45,8 +46,15 @@ body{
     position: absolute;
 }
 
-.good-obstacle {
+.diamond-obstacle {
     position: absolute;
+    background-image: url('../img/diamond-crystal.png');
+    background-size: cover;
+}
+
+.gold-obstacle {
+    position: absolute;
+    background-image: url('../img/gold-brick.png');
     background-size: cover;
 }
 

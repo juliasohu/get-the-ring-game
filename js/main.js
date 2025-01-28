@@ -1,9 +1,9 @@
 // MAIN VARIABLES //
 const goodObstaclesArr = [];
 const badObstaclesArr = [];
-let totalSilver = 0;
+let totalDiamond = 0;
 let totalGold = 0;
-const goalSilver = 6;
+const goalDiamond = 6;
 const goalGold = 4;
 
 // Creating Player 1
@@ -48,9 +48,9 @@ const goodObjMovement = setInterval(() => {
       player1.positionY + player1.height > obstacle.positionY
     ) {
       // Good collision action
-      if (obstacle.type == "silver") {
-        totalSilver++;
-        console.log("total Silver" + totalSilver);
+      if (obstacle.type == "diamond") {
+        totalDiamond++;
+        console.log("total Diamond" + totalDiamond);
       } 
       else if (obstacle.type == "gold") {
         totalGold++;
@@ -61,7 +61,7 @@ const goodObjMovement = setInterval(() => {
       obstacle.obstacleElm.remove();
     }
 
-    if (totalSilver >= goalSilver && totalGold >= goalGold) {
+    if (totalDiamond >= goalDiamond && totalGold >= goalGold) {
       stopGame();
       window.location.href = "../screens/winner.html";
     }
@@ -95,7 +95,7 @@ function stopGame() {
 }
 
 function createRandomGoodObstacle() {
-  const types = ["silver", "gold"];
+  const types = ["diamond", "gold"];
   const randomType = types[Math.floor(Math.random() * types.length)];
   const goodObj = new GoodObstacle(randomType);
   return goodObj;

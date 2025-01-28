@@ -73,14 +73,9 @@ class Player {
         super();
         this.createObstacleHTML();
         this.type = type;
-        //this.obstacleElm.className = `${type}-obstacle` //Might not need this
-        if (this.type === 'silver') {
-          this.obstacleElm.style.backgroundImage = "url('../img/silver-several.png')";
-        } else if (this.type === 'gold') {
-          this.obstacleElm.style.backgroundImage = "url('../img/gold-obstacle.png')";
-        }
-    }
+        this.obstacleElm.className = `${type}-obstacle`
   }
+}
 
   class BadObstacle extends Obstacle {
     constructor(){
