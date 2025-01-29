@@ -138,6 +138,8 @@ function playCollisionSound(obstacleType) {
 function updateScoreTracker(){
   counterDiamond.innerText = `${totalDiamond} / ${goalDiamond}`;
   counterGold.innerText = `${totalGold} / ${goalGold}`
+  counterDiamond.appendChild(diamondIcon)
+  counterGold.appendChild(goldIcon)
 }
 
 /*const backGroundMusic = new Audio()

@@ -81,23 +81,25 @@ body{
     border: 10px white;
     top: 40px;
     right: 40px;
-    padding: 50px 40px;
+    padding: 20px 35px;
     color: white;
     border-radius: 10px;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 #score-tracker p {
     font-size: large;
-    margin: 2px 2px;
-    display: flex;
+    margin: 0;
 }
 
 #score-tracker img {
     width: 25px;
-    height: 25px;
-    margin-right: 10px
-
+    height: auto;
+    margin-left: 10px;
+    vertical-align: middle;
 }
 
 h1{
