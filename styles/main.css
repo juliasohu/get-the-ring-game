@@ -171,3 +171,8 @@ a:hover{
     border-radius: 10px;
     font-size: larger;
 }
+
+#mute-button{
+    display: flex;
+    background-image: url("./img/mute.png");
+}

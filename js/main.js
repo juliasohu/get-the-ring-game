@@ -73,7 +73,7 @@ const goodObjMovement = setInterval(() => {
         totalGold++;
       }
       else if (obstacle.type == 'fish'){
-        player1.stepSize = player1.stepSize * 2;
+        player1.stepSize = player1.stepSize * 1.5;
       }
 
       updateScoreTracker()
@@ -129,8 +129,9 @@ function playCollisionSound(obstacleType) {
   const fishAudio = new Audio('./audio/eating-sound.mp3')
   
   //Adjusting the volume
-  goodAudio.volume = 0.5
+  goodAudio.volume = 0.4
   badAudio.volume = 0.6
+  fishAudio.volume = 0.6
 
   if (obstacleType == 'diamond' || obstacleType == 'gold') {
     goodAudio.play()
