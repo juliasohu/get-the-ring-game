@@ -29,7 +29,6 @@ class Player {
       }
     }
   
-    //TODO revisar el movimiento a la derecha que no se pase ni quede corto//
     moveRight() {
       const boardWidth = boardElement.clientWidth; //retrieving the width + calculating in vw
       const maxPositionX = boardWidth - this.width;

@@ -42,7 +42,7 @@ body{
 
 #page-gameover a{
     text-decoration: none;
-    color: rgb(162, 16, 16);
+    color: rgb(180, 25, 25);
     font-style: italic;
 }
 
@@ -75,6 +75,16 @@ body{
     position: absolute;
     background-image: url('../img/gold-obstacle-crop2.png');
     background-size: cover;
+}
+
+.fish-obstacle {
+    position: absolute;
+    background-image: url('../img/fish-blue.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 0px;
+    background-position: bottom;
 }
 
 .bad-obstacle {

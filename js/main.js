@@ -67,11 +67,13 @@ const goodObjMovement = setInterval(() => {
       playCollisionSound(obstacle.type);
       // Good collision action
       if (obstacle.type == "diamond") {
-        player1.stepSize = player1.stepSize * 2;
         totalDiamond++;
       } 
       else if (obstacle.type == "gold") {
         totalGold++;
+      }
+      else if (obstacle.type == 'fish'){
+        player1.stepSize = player1.stepSize * 2;
       }
 
       updateScoreTracker()
@@ -115,7 +117,7 @@ function stopGame() {
 }
 
 function createRandomGoodObstacle() {
-  const types = ["diamond", "gold"];
+  const types = ["diamond", "diamond", "diamond", "gold", "gold", "gold", "fish"]; //added more instances of diamond & gold for less probabilities to have fish
   const randomType = types[Math.floor(Math.random() * types.length)];
   const goodObj = new GoodObstacle(randomType);
   return goodObj;
@@ -124,6 +126,7 @@ function createRandomGoodObstacle() {
 function playCollisionSound(obstacleType) {
   const goodAudio = new Audio('./audio/good-obstacle-sound.wav')
   const badAudio = new Audio('./audio/ouch_cut.mp3')
+  const fishAudio = new Audio('./audio/eating-sound.mp3')
   
   //Adjusting the volume
   goodAudio.volume = 0.5
@@ -131,6 +134,9 @@ function playCollisionSound(obstacleType) {
 
   if (obstacleType == 'diamond' || obstacleType == 'gold') {
     goodAudio.play()
+  }
+  else if (obstacleType == 'fish'){
+    fishAudio.play()
   }
   else if (obstacleType == 'bad') {
     badAudio.play()
