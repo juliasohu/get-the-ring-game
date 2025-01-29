@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'MiddleEarth';
+    src: url('../fonts/MiddleEarth.woff2') format('woff2'),
+        url('../fonts/MiddleEarth.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -6,8 +15,7 @@ body{
     align-items: center;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.633);
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+    font-family: 'MiddleEarth';
 }
 
 #board {
@@ -65,7 +73,7 @@ body{
 
 .gold-obstacle {
     position: absolute;
-    background-image: url('../img/gold-brick.png');
+    background-image: url('../img/gold-obstacle-crop2.png');
     background-size: cover;
 }
 
@@ -86,7 +94,7 @@ body{
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items:flex-end;
     gap: 10px;
 }
 
@@ -113,7 +121,7 @@ h1{
     background-size: cover;
     justify-content: center;
     text-align: center;
-    font-size: 40px;
+    font-size: 150%;
 }
 
 #board-winner {
@@ -123,6 +131,7 @@ h1{
     padding: 50px 100px;
     color: rgb(5, 61, 21);
     border-radius: 10px;
+    font-size: larger;
 }
 
 #winner-image {
@@ -144,7 +153,7 @@ h1{
 
 #page-winner a{
     text-decoration: none;
-    color: rgb(31, 205, 60);
+    color: rgb(80, 240, 107);
     font-style: italic;
 }
 

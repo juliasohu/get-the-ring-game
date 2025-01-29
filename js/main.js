@@ -32,7 +32,7 @@ diamondIcon.src = "./img/diamond-crystal.png"
 const counterGold = document.createElement("p")
 counterGold.className = "counter-element"
 const goldIcon = document.createElement("img")
-goldIcon.src = "./img/gold-brick.png"
+goldIcon.src = "./img/gold-obstacle-crop2.png"
 updateScoreTracker()
 
 scoreTracker.appendChild(counterDiamond)
@@ -67,11 +67,13 @@ const goodObjMovement = setInterval(() => {
       playCollisionSound(obstacle.type);
       // Good collision action
       if (obstacle.type == "diamond") {
+        player1.stepSize = player1.stepSize * 2;
         totalDiamond++;
       } 
       else if (obstacle.type == "gold") {
         totalGold++;
       }
+
       updateScoreTracker()
       //remove obstacles so that counter only takes 1
       goodObstaclesArr.splice(index, 1);
