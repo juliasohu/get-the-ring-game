@@ -24,14 +24,21 @@ document.addEventListener("keydown", (event) => {
 // SCORE TRACKER ELEMENTS //
 const scoreTracker = document.getElementById("score-tracker")
 
-const counterDiamond = document.createElement("div")
+const counterDiamond = document.createElement("p")
 counterDiamond.className = "counter-element"
-const counterGold = document.createElement("div")
+const diamondIcon = document.createElement("img")
+diamondIcon.src = "./img/diamond-crystal.png"
+
+const counterGold = document.createElement("p")
 counterGold.className = "counter-element"
+const goldIcon = document.createElement("img")
+goldIcon.src = "./img/gold-brick.png"
 updateScoreTracker()
 
 scoreTracker.appendChild(counterDiamond)
 scoreTracker.appendChild(counterGold)
+counterDiamond.appendChild(diamondIcon)
+counterGold.appendChild(goldIcon)
 
 
 // SET TIMES FOR OBJECTS CREATION GOOD vs BAD//
@@ -127,3 +134,6 @@ function updateScoreTracker(){
   counterDiamond.innerText = `${totalDiamond} / ${goalDiamond}`;
   counterGold.innerText = `${totalGold} / ${goalGold}`
 }
+
+/*const backGroundMusic = new Audio()
+backGroundMusic.play()*/

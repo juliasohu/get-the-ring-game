@@ -84,10 +84,20 @@ body{
     padding: 50px 40px;
     color: white;
     border-radius: 10px;
+    align-items: center;
 }
 
-#score-tracker div {
+#score-tracker p {
     font-size: large;
+    margin: 2px 2px;
+    display: flex;
+}
+
+#score-tracker img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px
+
 }
 
 h1{
@@ -99,7 +109,6 @@ h1{
     /*background-color: rgba(0, 0, 0, 0.876);*/
     background-image: url("../img/shire-happiness.jpg");
     background-size: cover;
-    size: 50vw;
     justify-content: center;
     text-align: center;
     font-size: 40px;
@@ -126,8 +135,18 @@ h1{
     margin: 0;
 }
 
+#ring:hover{
+    transform: scale(1.2);
+    /*box-shadow: 0 0 15px rgba(52, 152, 219, 0.7);*/
+}
+
 #page-winner a{
     text-decoration: none;
     color: rgb(31, 205, 60);
     font-style: italic;
+}
+
+a:hover{
+    border-radius: 10px;
+    font-size: larger;
 }
