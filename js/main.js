@@ -73,7 +73,7 @@ const goodObjMovement = setInterval(() => {
 
     if (totalDiamond >= goalDiamond && totalGold >= goalGold) {
       stopGame();
-      setTimeout(() => {window.location.href = "../screens/winner.html"}, 200);
+      setTimeout(() => {window.location.href = "./screens/winner.html"}, 200);
     }
   });
 }, 10);
@@ -91,7 +91,7 @@ const badObjMovement = setInterval(() => {
     ) {
       playCollisionSound(obstacle.type)
       stopGame();
-      setTimeout(() => {window.location.href = "../screens/game-over.html"}, 200) ;
+      setTimeout(() => {window.location.href = "./screens/game-over.html"}, 200) ;
     }
   });
 }, 10);
