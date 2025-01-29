@@ -113,8 +113,8 @@ function createRandomGoodObstacle() {
 }
 
 function playCollisionSound(obstacleType) {
-  const goodAudio = new Audio('../audio/good-obstacle-sound.wav')
-  const badAudio = new Audio('../audio/ouch_cut.mp3')
+  const goodAudio = new Audio('./audio/good-obstacle-sound.wav')
+  const badAudio = new Audio('./audio/ouch_cut.mp3')
   if (obstacleType == 'diamond' || obstacleType == 'gold') {
     goodAudio.play()
   }
