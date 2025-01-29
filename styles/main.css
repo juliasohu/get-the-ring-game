@@ -11,8 +11,8 @@ body{
 }
 
 #board {
-    width: 1400px;
-    height: 800px;
+    width: 1300px;
+    height: 600px;
     position: relative;
     border: 1px white;
     background-image: url("../img/the-shire.jpg");

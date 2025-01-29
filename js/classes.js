@@ -7,8 +7,8 @@ class Player {
     constructor() {
       this.width = 80;
       this.height = 120;
-      this.positionX = 500 - this.width / 2;
-      this.positionY = 682;
+      this.positionX = 640 - this.width / 2;
+      this.positionY = 480;
       this.stepSize = 10
   
       this.playerElm = document.getElementById("player");
