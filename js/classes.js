@@ -23,7 +23,7 @@ class Player {
     }
   
     moveLeft() {
-      if(this.positionX > 0){
+      if(this.positionX - this.stepSize >= 0){
         this.positionX -= this.stepSize;
         this.updateUI();
       }
