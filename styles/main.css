@@ -28,6 +28,9 @@ body{
     background-size: cover;
     overflow: hidden;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #page-gameover {
@@ -100,7 +103,7 @@ body{
     top: 40px;
     right: 40px;
     padding: 20px 35px;
-    color: white;
+    color: rgba(7, 7, 7, 0.623);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -176,4 +179,31 @@ a:hover{
     position: absolute;
     display: flex;
     background-image: url("./img/mute.png");
+}
+
+#instructions-banner {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgba(7, 7, 7, 0.9);
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    z-index: 1000;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'MiddleEarth', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+#instructions-banner h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#instructions-banner ul {
+    list-style-type: disc;
+    padding-left: 20px;
 }

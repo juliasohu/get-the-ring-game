@@ -107,6 +107,11 @@ const badObjMovement = setInterval(() => {
   });
 }, 10);
 
+// INSTRUCTIONS CLICKING BANNER //
+document.getElementById('instructions-banner').addEventListener('click', function() {
+  this.style.display = 'none';
+});
+
 // FUNCTIONS //
 
 function stopGame() {
