@@ -161,7 +161,7 @@ backGroundMusic.play()*/
 
 // MUTE/UNMUTE BACKGROUND MUSIC //
 const muteButton = document.getElementById('mute-button');
-const backgroundMusic = new Audio('./audio/fantasy-medieval-epic-music');
+const backgroundMusic = new Audio('./audio/fantasy-medieval-epic-music.mp3');
 backgroundMusic.loop = true;
 backgroundMusic.volume = 0.5;
 backgroundMusic.play();
