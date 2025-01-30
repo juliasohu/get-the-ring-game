@@ -155,26 +155,3 @@ function updateScoreTracker(){
   counterDiamond.appendChild(diamondIcon)
   counterGold.appendChild(goldIcon)
 }
-
-/*const backGroundMusic = new Audio()
-backGroundMusic.play()*/
-
-// MUTE/UNMUTE BACKGROUND MUSIC //
-const muteButton = document.getElementById('mute-button');
-const backgroundMusic = new Audio('./audio/fantasy-medieval-epic-music.mp3');
-backgroundMusic.loop = true;
-backgroundMusic.volume = 0.5;
-backgroundMusic.play();
-
-let isMuted = false;
-
-muteButton.addEventListener('click', () => {
-    if (isMuted) {
-      backgroundMusic.muted = false;
-        muteButton.style.backgroundImage = "url('../img/unmute.png')";
-    } else {
-      backgroundMusic.muted = true;
-        muteButton.style.backgroundImage = "url('../img/mute.png')";
-    }
-    isMuted = !isMuted;
-});
