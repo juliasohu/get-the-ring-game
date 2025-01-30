@@ -173,6 +173,7 @@ a:hover{
 }
 
 #mute-button{
+    position: absolute;
     display: flex;
     background-image: url("./img/mute.png");
 }
