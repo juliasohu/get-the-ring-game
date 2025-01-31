@@ -91,7 +91,7 @@ body{
 }
 
 .bad-obstacle {
-    background-image: url("../img/rock-1.png");
+    background-image: url("../img/rock-grass-crop.png");
     background-size: cover;
     position: absolute;
 }
