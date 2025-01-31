@@ -1,4 +1,4 @@
-# GET THE RING GAME
+# GET THE RING GAME :ring:
 
 ## Description
 This is an educational project done during a bootcamp. The project consists of a game based on Middle Earth, with its goal being building a ring with the good falling objects (gold and diamond), and avoiding the bad objects (rocks).

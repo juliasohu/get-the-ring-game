@@ -108,7 +108,7 @@ const badObjMovement = setInterval(() => {
 }, 10);
 
 // INSTRUCTIONS CLICKING BANNER //
-document.getElementById('instructions-banner').addEventListener('click', function() {
+document.getElementById('instructions-banner').addEventListener('keydown', function() {
   this.style.display = 'none';
 });
 
