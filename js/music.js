@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const muteButton = document.getElementById('mute-button');
     let backgroundMusic;
     let isLooping = true;
+    let isPlaying = false;
     
     if (window.location.pathname.includes('game-over')) {
         backgroundMusic = new Audio('./audio/voice-of-sauron.mp3');
@@ -18,7 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     backgroundMusic.loop = isLooping;
-    backgroundMusic.play();
+    document.addEventListener('keydown', () => {
+        if (!isPlaying) {
+            backgroundMusic.play();
+            isPlaying = true;
+    }})
   
     let isMuted = false;
   
