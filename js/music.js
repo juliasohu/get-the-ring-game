@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
         muteButton.addEventListener('click', () => {
             if (isMuted) {
                 backgroundMusic.muted = false;
-                muteButton.style.backgroundImage = "url('../img/unmute.png')";
+                muteButton.style.backgroundImage = "url('./img/unmute.png')";
             } else {
                 backgroundMusic.muted = true;
-                muteButton.style.backgroundImage = "url('../img/mute.png')";
+                muteButton.style.backgroundImage = "url('./img/mute.png')";
             }
             isMuted = !isMuted;
         });
