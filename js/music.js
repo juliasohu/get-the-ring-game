@@ -9,21 +9,23 @@ document.addEventListener('DOMContentLoaded', () => {
         backgroundMusic = new Audio('./audio/voice-of-sauron.mp3');
         backgroundMusic.volume = 0.4;
         isLooping = false;
+        backgroundMusic.play()
     } else if (window.location.pathname.includes('winner')) {
         backgroundMusic = new Audio('./audio/winner-sound.wav');
         backgroundMusic.volume = 0.1
         isLooping = false;
+        backgroundMusic.play()
     } else {
         backgroundMusic = new Audio('./audio/fantasy-medieval-epic-music.mp3');
         isLooping = true;
+        document.addEventListener('keydown', () => {
+            if (!isPlaying) {
+                backgroundMusic.play();
+                isPlaying = true;
+        }})
     }
   
     backgroundMusic.loop = isLooping;
-    document.addEventListener('keydown', () => {
-        if (!isPlaying) {
-            backgroundMusic.play();
-            isPlaying = true;
-    }})
   
     let isMuted = false;
   
