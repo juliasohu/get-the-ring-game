@@ -3,8 +3,8 @@ const goodObstaclesArr = [];
 const badObstaclesArr = [];
 let totalDiamond = 0;
 let totalGold = 0;
-const goalDiamond = 1;
-const goalGold = 1;
+const goalDiamond = 2;
+const goalGold = 5;
 
 // Creating Player 1
 let player1 = new Player();
